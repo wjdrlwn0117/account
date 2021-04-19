@@ -42,7 +42,8 @@ public class logInActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(logInActivity.this, signUpActivity.class);       //회원가입버튼 누를 시
 
-                startActivityForResult(intent, 1);
+                startActivity(intent);
+
             }
         });
 

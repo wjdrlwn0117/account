@@ -10,6 +10,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -121,11 +122,13 @@ public class signUpActivity extends AppCompatActivity {
 
                             mDatabase.getReference().child("users").child(uid).setValue(userModel);
 
+                            Toast.makeText(signUpActivity.this,"회원가입이 완료되었습니다. ",Toast.LENGTH_SHORT).show();
                             Log.d(TAG, "회원가입이 완료되었습니다.");
                             FirebaseUser user = mAuth.getCurrentUser();
                             //UI
                         } else {
                             // If sign in fails, display a message to the user.
+                            Toast.makeText(signUpActivity.this,"회원가입에 실패하였습니다. ",Toast.LENGTH_SHORT).show();
                             Log.w(TAG, "회원가입에 실패하였습니다.", task.getException());
                             //UI
                         }
